@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android= "http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사용자명"/>
+            <Button
+                android:id="@+id/logOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log Out"/>
+            <Button
+                android:id="@+id/myPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Page"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text ="컴퓨터 공학과 홈페이지"/>
+        <TextView
+            android:id="@+id/ce_notice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="empty" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text ="소프트웨어 융합 대학 홈페이지"/>
+        <TextView
+            android:id="@+id/sw_notice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="empty" />
+    </LinearLayout>
+</ScrollView>
