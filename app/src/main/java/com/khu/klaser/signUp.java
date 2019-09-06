@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,6 +25,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class signUp extends AppCompatActivity {
+    private static final String TAG ="signUp";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +43,7 @@ public class signUp extends AppCompatActivity {
         back.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "signIn으로 돌아갑니다.", Toast.LENGTH_LONG).show();
+
                 finish();
             }
         });
@@ -84,24 +86,17 @@ public class signUp extends AppCompatActivity {
                                 String result = sb.toString();
                                 System.out.println(result);
                                 if (result.contains("error")) {
-                                    Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                                  //log 띄우기
                                 }
                                 else {
-                                    Handler mHandler = new Handler(Looper.getMainLooper());
-                                    mHandler.postDelayed(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            Toast.makeText(getApplicationContext(), "회원가입이 완료되었습니다.", Toast.LENGTH_LONG).show();
-                                            finish();
-                                        }
-
-                                    }, 0);
+                                    //log 띄우기
+                                    finish();
                                 }
                             }
                             else {
                                 String errorMessage = signUp_connection.getResponseMessage();
                                 System.out.println(errorMessage);
-                                Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show();
+                                //log 띄우기
                             }
                         }
                         catch (MalformedURLException e) {

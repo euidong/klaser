@@ -80,7 +80,7 @@ public class menu extends AppCompatActivity {
                     else {
                         String errorMessage = notice_connection.getResponseMessage();
                         System.out.println(errorMessage);
-                        Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_LONG).show();
+                        //log 띄우기
                     }
                 }
                 catch (MalformedURLException e) {
@@ -138,7 +138,7 @@ public class menu extends AppCompatActivity {
         logOutButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
+                //log 띄우기
                 finish();
             }
         });

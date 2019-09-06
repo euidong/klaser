@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,7 +26,7 @@ import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends AppCompatActivity {
-
+    private static final String TAG ="MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                                 String result = sb.toString();
                                 System.out.println(result);
                                 if (result.contains("error")) {
-                                    Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                                    //log 띄우기
                                 }
                                 else {
                                     JSONObject js = new JSONObject(result);
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                             else {
                                 String errorMessage = signIn_connection.getResponseMessage();
                                 System.out.println(errorMessage);
-                                Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_LONG).show();
+                                //log 띄우기
                             }
                         }
                         catch (MalformedURLException e) {
