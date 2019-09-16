@@ -105,8 +105,8 @@ public class menu extends AppCompatActivity {
         final TextView ce_noticeText = findViewById(R.id.ce_notice);
         final TextView sw_noticeText = findViewById(R.id.sw_notice);
 
-        String ce_address = "http://ec2-52-79-239-236.ap-northeast-2.compute.amazonaws.com/notice/ce_api/";
-        String sw_address = "http://ec2-52-79-239-236.ap-northeast-2.compute.amazonaws.com/notice/sw_api/";
+        String ce_address = "http://54.180.102.107/notice/ce_api/";
+        String sw_address = "http://54.180.102.107/notice/sw_api/";
         get_notice(ce_address, ce_noticeText);
         get_notice(sw_address, sw_noticeText);
 

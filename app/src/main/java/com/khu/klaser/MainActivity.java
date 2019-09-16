@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                         StringBuilder sb = new StringBuilder();
                         HttpURLConnection signIn_connection=null;
                         try {
-                            URL sign_in_api = new URL("http://ec2-52-79-239-236.ap-northeast-2.compute.amazonaws.com/sign_in_api/");
+                            URL sign_in_api = new URL("http://54.180.102.107/sign_in_api/");
                             signIn_connection = (HttpURLConnection)sign_in_api.openConnection();
                             signIn_connection.setRequestProperty("Content-Type","application/json");
                             signIn_connection.setRequestMethod("POST");

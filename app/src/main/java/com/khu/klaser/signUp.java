@@ -1,24 +1,17 @@
 package com.khu.klaser;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -59,7 +52,7 @@ public class signUp extends AppCompatActivity {
                         StringBuilder sb = new StringBuilder();
                         HttpURLConnection signUp_connection=null;
                         try {
-                            URL sign_up_api = new URL("http://ec2-13-124-5-212.ap-northeast-2.compute.amazonaws.com/sign_up_api/");
+                            URL sign_up_api = new URL("http://54.180.102.107/sign_up_api/");
                             signUp_connection = (HttpURLConnection)sign_up_api.openConnection();
                             signUp_connection.setRequestProperty("Content-Type","application/json");
                             signUp_connection.setRequestMethod("POST");
@@ -76,26 +69,10 @@ public class signUp extends AppCompatActivity {
                             out.close();
 
                             int HttpResult = signUp_connection.getResponseCode();
-                            if (HttpResult == HttpURLConnection.HTTP_OK){
-                                BufferedReader br = new BufferedReader(new InputStreamReader(signUp_connection.getInputStream(), "utf-8"));
-                                String line = null;
-                                while((line =br.readLine()) != null) {
-                                    sb.append(line + "\n");
-                                }
-                                br.close();
-                                String result = sb.toString();
-                                System.out.println(result);
-                                if (result.contains("error")) {
-                                  //log 띄우기
-                                }
-                                else {
-                                    //log 띄우기
-                                    finish();
-                                }
+                            if (HttpResult == HttpURLConnection.HTTP_CREATED){
+                                finish();
                             }
                             else {
-                                String errorMessage = signUp_connection.getResponseMessage();
-                                System.out.println(errorMessage);
                                 //log 띄우기
                             }
                         }
